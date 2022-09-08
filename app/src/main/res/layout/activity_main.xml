@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.MainActivity">
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:text="Currency Convertor"
+        android:textSize="32sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/spFirstCurrency"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toTopOf="@+id/imgSwap"
+        app:layout_constraintEnd_toEndOf="@+id/spSecondCurrency"
+        app:layout_constraintStart_toStartOf="@+id/spSecondCurrency" />
+
+    <TextView
+        android:id="@+id/tvFirstCurrencyValue"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:text="0.0"
+        android:inputType="number"
+        android:textSize="60sp"
+        android:gravity="center"
+        android:maxLines="@integer/material_motion_duration_medium_1"
+        app:layout_constraintBottom_toBottomOf="@+id/spFirstCurrency"
+        app:layout_constraintEnd_toEndOf="@+id/tvSecondCurrencyValue"
+        app:layout_constraintStart_toStartOf="@+id/tvSecondCurrencyValue"
+        app:layout_constraintTop_toTopOf="@+id/spFirstCurrency" />
+
+    <ImageView
+        android:id="@+id/imgSwap"
+        android:layout_width="51dp"
+        android:layout_height="61dp"
+        android:layout_marginBottom="40dp"
+        android:src="@drawable/ic_swap"
+        app:layout_constraintBottom_toTopOf="@+id/spSecondCurrency"
+        app:layout_constraintEnd_toEndOf="@+id/spFirstCurrency"
+        app:layout_constraintStart_toStartOf="@+id/spFirstCurrency" />
+
+    <Spinner
+        android:id="@+id/spSecondCurrency"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginBottom="60dp"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tvSecondCurrencyValue"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:gravity="center"
+        android:text="0.0"
+        android:inputType="number"
+        android:maxLines="@integer/material_motion_duration_medium_1"
+        android:textColor="@color/black"
+        android:textSize="60sp"
+        app:layout_constraintBottom_toBottomOf="@+id/spSecondCurrency"
+        app:layout_constraintStart_toEndOf="@+id/spSecondCurrency"
+        app:layout_constraintTop_toTopOf="@+id/spSecondCurrency" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_marginBottom="10dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <Button
+                android:id="@+id/btnSeven"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="7"
+                android:textSize="32sp" />
+
+            <Button
+                android:id="@+id/btnEight"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="8"
+                android:textSize="32sp" />
+
+            <Button
+                android:id="@+id/btnNine"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="9"
+                android:textSize="32sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <Button
+                android:id="@+id/btnFour"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="4"
+                android:textSize="32sp" />
+
+            <Button
+                android:id="@+id/btnFive"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="5"
+                android:textSize="32sp" />
+
+            <Button
+                android:id="@+id/btnSix"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="6"
+                android:textSize="32sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <Button
+                android:id="@+id/btnOne"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="1"
+                android:textSize="32sp" />
+
+            <Button
+                android:id="@+id/btnTwo"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="2"
+                android:textSize="32sp" />
+
+            <Button
+                android:id="@+id/btnThree"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="3"
+                android:textSize="32sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <Button
+                android:id="@+id/btnC"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="C"
+                android:textSize="32sp" />
+
+            <Button
+                android:id="@+id/btnZero"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="0"
+                android:textSize="32sp" />
+
+            <Button
+                android:id="@+id/btnDot"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="."
+                android:textSize="32sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
