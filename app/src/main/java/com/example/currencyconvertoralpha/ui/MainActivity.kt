@@ -11,7 +11,6 @@ import androidx.core.view.isVisible
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.lifecycleScope
 import com.example.currencyconvertoralpha.R
-import com.example.currencyconvertoralpha.RetrofitInstance
 import com.example.currencyconvertoralpha.databinding.ActivityMainBinding
 import com.example.currencyconvertoralpha.viewmodel.MainViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -154,33 +153,5 @@ class MainActivity : AppCompatActivity() {
         binding.spSecondCurrency.adapter = adapter
     }
 
-    private fun ViewModelGetAllCurrencies(){
-        lifecycleScope.launchWhenCreated {
-            val response = try{
-                RetrofitInstance.api.getAvailableCurrencies()
-            } catch(e: IOException){
-                Log.e(TAG, "IOException, you might not have internet connection!")
-                Log.e(TAG, e.toString())
-                return@launchWhenCreated
-            } catch (e: HttpException){
-                Log.e(TAG, "HttpException, unexpected response")
-                return@launchWhenCreated
-            }
-
-            if(response.isSuccessful && response.body() != null){
-                Toast.makeText(this@MainActivity, "Done", Toast.LENGTH_SHORT).show()
-                Log.d(TAG, "done")
-                println(response.body()!!)
-                var countries: List<String>
-//                for(country in AvailableCurrenciesResponse::class.members)
-//                    country.
-//                val countries = listOf(response.body()).toString()
-//                var adapter = ArrayAdapter<String>(this@MainActivity, androidx.constraintlayout.widget.R.layout.support_simple_spinner_dropdown_item, countries)
-//                binding.spInput.adapter = adapter
-            } else {
-                Log.e(TAG, "Response not successful")
-            }
-        }
-    }
 
 }
