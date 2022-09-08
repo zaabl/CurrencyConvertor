@@ -3,21 +3,14 @@ package com.example.currencyconvertoralpha.ui
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.core.view.isVisible
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.lifecycleScope
-import com.example.currencyconvertoralpha.R
 import com.example.currencyconvertoralpha.databinding.ActivityMainBinding
 import com.example.currencyconvertoralpha.viewmodel.MainViewModel
 import dagger.hilt.android.AndroidEntryPoint
-import retrofit2.HttpException
-import java.io.IOException
-
-const val TAG = "MainActivity"
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
@@ -148,7 +141,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun fillSpinners(){
         val currenciesNames = viewModel.getCurrenciesNames()
-        val adapter = ArrayAdapter<String>(this, androidx.appcompat.R.layout.support_simple_spinner_dropdown_item, currenciesNames)
+        val adapter = ArrayAdapter(this, androidx.appcompat.R.layout.support_simple_spinner_dropdown_item, currenciesNames)
         binding.spFirstCurrency.adapter = adapter
         binding.spSecondCurrency.adapter = adapter
     }
